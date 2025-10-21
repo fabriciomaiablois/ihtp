@@ -1,0 +1,7 @@
+baseURL = 'https://ihtp.fun/'
+languageCode = 'en-us'
+title = 'IHTP'
+theme = 'ihtp'
+
+[params]
+sitedescription = 'IHTP'

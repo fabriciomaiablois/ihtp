@@ -1,0 +1,14 @@
+[not_found]
+    other = "404"
+
+[not_found_description]
+    other = "It seems there is nothing here..."
+
+[home]
+    other = "Home"
+
+[and]
+  other = "and"
+
+[theme]
+  other = "theme"

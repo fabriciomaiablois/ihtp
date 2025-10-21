@@ -1,0 +1,19 @@
+{{ define "title"}}
+{{ .Title }} | {{ .Site.Params.author.name }}
+{{ end }}
+
+{{ define "main" }}
+<div class="postWrapper">
+    <h1>{{ .Title }}</h1>
+    {{ if .Description}}
+    	<p>{{.Description}}</p>
+    {{ end }}
+    <section class="postMetadata">
+        {{ $formattedDate := .Date.Format "2006-01-02" }}
+        <time datetime="{{ $formattedDate }}">{{ .Date | time.Format ":date_long" }}</time>
+    </section>
+    <div>
+        {{ .Content }}
+    </div>
+</div>
+{{ end }}
