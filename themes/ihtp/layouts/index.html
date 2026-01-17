@@ -18,13 +18,31 @@
         var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
         var seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-        document.getElementById("countdown").innerHTML = days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
+        document.getElementById("countdown").innerHTML = "W.O.A Countdown: " + days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
 
         if (distance < 0) {
-          clearInterval(x);
-          document.getElementById("countdown").innerHTML = "EXPIRED";
-        }
-      }, 1000);
+            clearInterval(x);
+            document.getElementById("countdown").innerHTML = "EXPIRED";
+            }
+        }, 1000);
+
+        var countDownDateBill = new Date("Jan 16, 2028 22:31:00").getTime();
+        var xBill = setInterval(function() {
+        var nowBill = new Date().getTime();
+        var distanceBill = countDownDateBill - nowBill;
+
+        var daysBill = Math.floor(distanceBill / (1000 * 60 * 60 * 24));
+        var hoursBill = Math.floor((distanceBill % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        var minutesBill = Math.floor((distanceBill % (1000 * 60 * 60)) / (1000 * 60));
+        var secondsBill = Math.floor((distanceBill % (1000 * 60)) / 1000);
+
+        document.getElementById("countdownBill").innerHTML = "Bill coming to Berlin Countdown: " + daysBill + "d " + hoursBill + "h " + minutesBill + "m " + secondsBill + "s ";
+
+        if (distanceBill < 0) {
+            clearInterval(xBill);
+            document.getElementById("countdownBill").innerHTML = "EXPIRED";
+          }
+       }, 1000);
     </script>
 </head>
 
@@ -37,6 +55,7 @@
                 <div>
                     <h1 class="indexHeader">IHTP</h1>
                     <h1 id="countdown"></h1>
+                    <h1 id="countdownBill"></h1>
                 </div>
             </div>
         </main>
